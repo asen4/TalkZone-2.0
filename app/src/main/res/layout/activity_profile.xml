@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorMain"
+        android:id="@+id/profileHeader"
+        android:paddingTop="15dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="15dp"
+        android:paddingBottom="10dp">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/profileBackButton"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:background="?android:attr/actionBarItemBackground"
+            style="@style/SelectableItemBackground" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Person Profile"
+            android:id="@+id/personProfileText"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/personProfileInformation"
+        android:layout_margin="25dp"
+        android:layout_below="@id/profileHeader">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/myRelativeLayout">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:id="@+id/profileImage"
+                android:src="@drawable/ic_baseline_person_black_75" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/profileFullName"
+                android:text="Full Name"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_toEndOf="@id/profileImage"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/profilePhoneNumber"
+            android:layout_below="@id/myRelativeLayout"
+            android:layout_marginTop="25dp"
+            android:drawableStart="@drawable/ic_baseline_phone_24"
+            android:drawablePadding="20dp"
+            tools:text="Phone Number"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/profileEmailAddress"
+            android:layout_below="@id/profilePhoneNumber"
+            android:layout_marginTop="20dp"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:drawablePadding="20dp"
+            tools:text="Email Address"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/profileStatus"
+            android:layout_below="@id/profileEmailAddress"
+            android:layout_marginTop="20dp"
+            android:drawableStart="@drawable/ic_baseline_favorite_24"
+            android:drawablePadding="20dp"
+            tools:text="Profile Status"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/profileCountryOfResidence"
+            android:layout_below="@id/profileStatus"
+            android:layout_marginTop="20dp"
+            android:drawableStart="@drawable/ic_baseline_language_24"
+            android:drawablePadding="20dp"
+            tools:text="Country of Residence"
+            android:textSize="16sp" />
+
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/map"
+            android:name="com.anubhav.talkzone2.ProfileMapsFragment"
+            android:layout_below="@id/profileCountryOfResidence"
+            android:layout_marginTop="20dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

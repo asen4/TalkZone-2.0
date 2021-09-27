@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".AddContactActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"
+        android:background="@color/colorMain"
+        android:id="@+id/addContactHeader">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/addContactBackButton"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:background="?android:attr/actionBarItemBackground"
+            style="@style/SelectableItemBackground" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Add Contact"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cardViewPhoneNumberInstructions"
+        android:layout_below="@id/addContactHeader"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        app:cardCornerRadius="25dp"
+        android:translationZ="25dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_outline_info_24"
+            android:drawablePadding="10dp"
+            android:text="Please enter the phone number of the user you would like to add to your list of contacts."
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:padding="14dp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cardViewAddPhoneNumber"
+        android:layout_below="@id/cardViewPhoneNumberInstructions"
+        android:layout_margin="25dp"
+        app:cardCornerRadius="25dp"
+        android:translationZ="25dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/phoneNumberLayout">
+
+                <com.hbb20.CountryCodePicker
+                    android:layout_width="wrap_content"
+                    android:layout_height="53dp"
+                    android:id="@+id/countryCodePicker"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/country_code_picker_background"
+                    app:ccp_defaultNameCode="US" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textInputPhoneNumber"
+                    app:hintTextColor="@color/colorTurquoise"
+                    app:boxStrokeColor="@color/colorTurquoise"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/addContactPhoneNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:hint="Phone Number"
+                        android:maxLines="1"
+                        android:inputType="phone"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:textCursorDrawable="@null" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/phoneNumberAvailable"
+                android:layout_below="@id/phoneNumberLayout"
+                tools:text="Available on APP NAME"
+                android:textSize="16sp"
+                android:textColor="@color/colorGreen"
+                android:drawableStart="@drawable/ic_baseline_check_24"
+                android:drawablePadding="10dp"
+                android:layout_marginTop="3dp"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/submitButton"
+                android:layout_below="@id/phoneNumberAvailable"
+                android:backgroundTint="@color/colorGray"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:text="Submit"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:paddingStart="45dp"
+                android:paddingEnd="45dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

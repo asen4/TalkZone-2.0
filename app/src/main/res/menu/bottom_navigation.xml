@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/nav_home"
+        android:title="Home"
+        android:icon="@drawable/ic_baseline_home_24" />
+
+    <item
+        android:id="@+id/nav_chats"
+        android:title="Chats"
+        android:icon="@drawable/ic_baseline_chat_24" />
+
+    <item
+        android:id="@+id/nav_call_history"
+        android:title="Call History"
+        android:icon="@drawable/ic_baseline_history_24" />
+
+    <item
+        android:id="@+id/nav_video_call"
+        android:title="Video Call"
+        android:icon="@drawable/ic_baseline_videocam_24" />
+
+    <item
+        android:id="@+id/nav_settings"
+        android:title="Settings"
+        android:icon="@drawable/ic_baseline_settings_24" />
+
+</menu>

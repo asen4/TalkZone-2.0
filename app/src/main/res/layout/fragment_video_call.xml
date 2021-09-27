@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".VideoCallFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="10dp"
+        android:background="@color/colorMain"
+        android:id="@+id/createRoomHeader">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Video Call"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/createRoomHeader">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/createRoomCardViewInstructions"
+            android:layout_margin="25dp"
+            app:cardCornerRadius="25dp"
+            android:translationZ="25dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_outline_info_24"
+                android:drawablePadding="10dp"
+                android:text="Please share this code with your friends in order to start the conference call."
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:padding="14dp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/createRoomCardViewCodeLayout"
+            android:layout_below="@id/createRoomCardViewInstructions"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            app:cardCornerRadius="25dp"
+            android:translationZ="25dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="15dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textInputSecretCode"
+                    app:endIconMode="clear_text"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="10"
+                    app:hintTextColor="@color/colorTurquoise"
+                    app:boxStrokeColor="@color/colorTurquoise"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextSecretCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:hint="Secret Code"
+                        android:maxLines="1"
+                        android:drawableStart="@drawable/ic_baseline_lock_24"
+                        android:drawablePadding="15dp"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:inputType="textCapWords"
+                        android:textCursorDrawable="@null" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/joinButton"
+                    android:backgroundTint="@color/colorGray"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:text="Join"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:paddingStart="45dp"
+                    android:paddingEnd="45dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/castScreenButton"
+            android:backgroundTint="@color/colorTurquoise"
+            android:src="@drawable/ic_baseline_cast_24"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="75dp"
+            android:layout_marginEnd="31dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
